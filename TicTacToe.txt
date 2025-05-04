@@ -1,0 +1,63 @@
+TIC TAC TOE!
+in termux:
+first step:nano (ur name script).sh
+second step:copy and paste this text to ur termux! 
+#!/bin/bash
+
+# Fungsi untuk mengecek dan install figlet di Termux
+check_figlet() {
+    if ! command -v figlet &> /dev/null; then
+        echo "Figlet belum terinstall. Menginstall..."
+        pkg install figlet -y
+        clear
+    fi
+}
+
+# Tampilkan judul dengan figlet
+show_title() {
+    check_figlet
+    figlet "TIC TAC TOE"
+    echo "============================"
+    echo "   Termux Version v1.0"
+    echo "============================"
+    echo ""
+}
+
+# Inisialisasi papan
+board=(" " " " " " " " " " " " " " " " " ")
+current_player="X"
+game_over=false
+
+# Fungsi untuk menampilkan papan
+display_board() {
+    clear
+    show_title
+    
+    echo " ${board[0]} | ${board[1]} | ${board[2]} "
+    echo "-----------"
+    echo " ${board[3]} | ${board[4]} | ${board[5]} "
+    echo "-----------"
+    echo " ${board[6]} | ${board[7]} | ${board[8]} "
+    echo ""
+    echo "Giliran pemain $current_player"
+    echo "-----------------------------"
+}
+
+# Fungsi untuk memeriksa kemenangan
+check_win() {
+    # Baris
+    for i in 0 3 6; do
+        if [[ "${board[$i]}" != " " && "${board[$i]}" == "${board[$i+1]}" && "${board[$i]}" == "${board[$i+2]}" ]]; then
+            game_over=true
+            return
+        fi
+    done
+
+    # Kolom
+    for i in 0 1 2; do
+        if [[ "${board[$
+        
+      
+      third step: click "CRTL" and "X" in your keyboard,Then click "Y"
+
+      final:bash (ur script name).sh
